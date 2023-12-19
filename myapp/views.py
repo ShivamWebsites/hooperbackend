@@ -26,6 +26,7 @@ processed_video_url = settings.MEDIA_URL + 'processed_video.mp4'
 
 def process_video(request):
     if request.method == 'POST':
+    
         form = VideoProcessingForm(request.POST, request.FILES)
         if form.is_valid():
             tweet_link = form.cleaned_data['tweet_link']
